@@ -1,0 +1,85 @@
+<div class="ui-g">
+  <div class="ui-g-6">
+    <div class="ui-g">
+      <div class="ui-g-6">Date Submitted</div>
+      <div class="ui-g-6">{{caseData.dateSubmitted | date:"dd-MM-yyyy"}}</div>
+    </div>
+    <div class="ui-g">
+      <div class="ui-g-6">Date Approved</div>
+      <div class="ui-g-6">{{caseData.dateApproved | date:"dd-MM-yyyy"}}</div>
+    </div>
+    <div class="ui-g">
+      <div class="ui-g-6">Author</div>
+      <div class="ui-g-6">{{caseData.author}}</div>
+    </div>
+    <div class="ui-g">
+      <div class="ui-g-6">Category</div>
+      <div class="ui-g-6">{{caseData.category}}</div>
+    </div>
+    <div class="ui-g">
+      <div class="ui-g-6">Keywords</div>
+      <div class="ui-g-6"><p-chips [(ngModel)]="caseData.keywords" disabled></p-chips></div>
+    </div>
+    <div class="ui-g">
+      <div class="ui-g-6">Rating</div>
+      <div class="ui-g-6"><app-case-rater *ngIf="caseData" [caseId]="caseData.id"></app-case-rater></div>
+    </div>
+    <div class="ui-g">
+      <div class="ui-g-6">Collections</div>
+      <div class="ui-g-6"><app-collection-multiselect *ngIf="caseData" [caseId]="caseData.id"></app-collection-multiselect></div>
+    </div>
+  </div>
+  <div class="ui-g-6">
+    <div class="ui-g">
+      <div class="ui-g-12">
+        <p-fieldset legend="Abstract">
+          {{caseData.abstract}}
+        </p-fieldset>
+      </div>
+    </div>
+    <div class="ui-g">
+      <div class="ui-g-12">
+        <p-fieldset legend="Case Description">
+          {{caseData.description}}
+        </p-fieldset>
+      </div>
+    </div>
+    <div class="ui-g">
+      <div class="ui-g-12">
+        <p-fieldset legend="History">
+          {{caseData.history}}
+        </p-fieldset>
+      </div>
+    </div>
+    <div class="ui-g">
+      <div class="ui-g-12">
+        <p-fieldset legend="Findings">
+          {{caseData.findings}}
+        </p-fieldset>
+      </div>
+    </div>
+    <div class="ui-g">
+      <div class="ui-g-12">
+        <p-fieldset legend="Discussion">
+          {{caseData.discussion}}
+        </p-fieldset>
+      </div>
+    </div>
+    <div class="ui-g">
+      <div class="ui-g-12">
+        <p-fieldset legend="Differential Diagnosis">
+          <ul>
+            <li *ngFor="let item of caseData.differentialDiagnosis">{{item}}</li>
+          </ul>
+        </p-fieldset>
+      </div>
+    </div>
+    <div class="ui-g">
+      <div class="ui-g-12">
+        <p-fieldset legend="Diagnosis">
+          {{caseData.diagnosis}}
+        </p-fieldset>
+      </div>
+    </div>
+  </div>
+</div>

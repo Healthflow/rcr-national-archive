@@ -1,0 +1,11 @@
+<div class="ui-g">
+  <div class="ui-g-12 ui-g-nopad">
+    <app-top-bar (onGlobalFilterChanged)="onGlobalFilterChanged($event)"></app-top-bar>
+  </div>
+  <div class="ui-g-12 ui-md-2">
+    <app-side-menu [globalFilter]="globalFilter"></app-side-menu>
+  </div>
+  <div class="ui-g-12 ui-md-10">
+    <router-outlet></router-outlet>
+  </div>
+</div>

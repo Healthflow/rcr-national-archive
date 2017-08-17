@@ -1,0 +1,14 @@
+<p-accordion [multiple]="true">
+    <p-accordionTab *ngFor="let imageType of imageTypes" header="{{imageType.title}}">
+        <p-dataList [value]="imageType.images">
+            <ng-template let-image pTemplate="item">
+                <div class="ui-g" style="border-bottom:1px solid #D5D5D5;">
+                    <div class="ui-g-10">{{image.title}}</div>
+                    <div class="ui-g-2"><button pButton type="button" icon="fa-external-link-square" label="Open in..." style="float:right"></button></div>
+                </div>
+            </ng-template>
+        </p-dataList >
+    </p-accordionTab>
+</p-accordion>
+
+<app-dicom-viewer></app-dicom-viewer>

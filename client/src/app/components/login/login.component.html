@@ -1,0 +1,19 @@
+<p-panel header="Login" [style]="{'display':'inline-block','position':'fixed','top':'0','bottom':'0','left':'0','right':'0','width':'400px','height':'240px','margin':'auto'}">
+  <div class="ui-g">
+    <div class="ui-g-12">
+      <input class="fill" type="text" pInputText placeholder="Username" />
+    </div>
+    <div class="ui-g-12">
+      <input class="fill" type="password" pPassword placeholder="Password" />
+    </div>
+    <div class="ui-g-6">
+      <p-checkbox name="rememberMe" value="Remember Me" label="Remember Me"></p-checkbox>
+    </div>
+    <div class="ui-g-6">
+      <button class="fill" pButton type="button" label="Forgot Password"></button>
+    </div>
+    <div class="ui-g-12">
+      <button class="fill" pButton type="button" label="Sign In" [routerLink]="['/main']"></button>
+    </div>
+  </div>
+</p-panel>

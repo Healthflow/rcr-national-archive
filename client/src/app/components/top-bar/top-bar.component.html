@@ -1,0 +1,17 @@
+<div class="ui-g>">
+    <div class="ui-g-12 ui-md-2">
+    <div class="ui-widget rcr-logo">
+        <img src="./assets/logo.png" alt="Royal College of Radiologists" />&nbsp;National<br>&nbsp;Archive
+    </div>
+    </div>
+    <div class="ui-g-12 ui-md-10">
+    <p-toolbar>
+        <div class="ui-toolbar-group-left">
+        <input class="rcr-search" type="text" pInputText placeholder="Start typing to search" #globalFilter (keyup)="onSearchKey(globalFilter.value)" />
+        </div>
+        <div class="ui-toolbar-group-right">
+        <p-splitButton label="{{user.name}}" icon="fa-user" [model]="userItems"></p-splitButton>
+        </div>
+    </p-toolbar>
+    </div>
+</div>

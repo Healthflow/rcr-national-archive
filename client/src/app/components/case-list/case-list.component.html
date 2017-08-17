@@ -1,0 +1,50 @@
+<p-dataTable #dt
+    [value]="cases"
+    [rows]="20"
+    [lazy]="true"
+    [paginator]="true"
+    [totalRecords]="totalRecords"
+    reorderableColumns="true"
+    selectionMode="single"
+    (onLazyLoad)="onLazyLoad($event)"
+    (onRowSelect)="onRowSelect($event)">
+
+    <p-column field="dateSubmitted" header="Date" [sortable]="true" [filter]="true" [style]="{'overflow':'visible'}" [style]="{'width':'15%'}">
+        <ng-template pTemplate="filter" let-col>
+            <p-calendar [dateFormat]="'dd-mm-yy'" (onSelect)="filterDate($event,col.field,col.filterMatchMode)" (onBlur)="filterDate($event.target.value,col.field,col.filterMatchMode)" styleClass="ui-column-filter" [inputStyle]="{'width':'100%'}" appendTo="body"></p-calendar>
+        </ng-template>
+        <ng-template let-col let-case="rowData" pTemplate="body">
+            <span>{{case[col.field] | date:"dd-MM-yyyy"}}</span>
+        </ng-template>
+    </p-column>
+    <p-column field="author" header="Author" [sortable]="true" [filter]="true" [style]="{'width':'15%'}"></p-column>
+    <p-column field="modality" header="Modality" [sortable]="true" [filter]="true" [style]="{'overflow':'visible','width':'10%'}">
+        <ng-template pTemplate="filter" let-col>
+            <p-multiSelect [options]="modalities" defaultLabel="All" (onChange)="dt.filter($event.value,col.field,col.filterMatchMode)" styleClass="ui-column-filter" appendTo="body"></p-multiSelect>
+        </ng-template>
+    </p-column>
+    <p-column field="imageCount" header="Images" [sortable]="true" [style]="{'width':'10%'}"></p-column>
+    <p-column field="description" header="Case Description" [style]="{'text-overflow':'ellipsis','white-space':'nowrap','overflow':'hidden','width':'30%'}"></p-column>
+    <p-column field="category" header="Category" [sortable]="true" [filter]="true" [style]="{'overflow':'visible','width':'10%'}">
+        <ng-template pTemplate="filter" let-col>
+            <p-multiSelect [options]="categories" defaultLabel="All" (onChange)="dt.filter($event.value,col.field,col.filterMatchMode)" styleClass="ui-column-filter" appendTo="body"></p-multiSelect>
+        </ng-template>
+    </p-column>
+    <p-column field="bodyPart" header="Body Part" [sortable]="true" [filter]="true" [style]="{'overflow':'visible','width':'10%'}">
+        <ng-template pTemplate="filter" let-col>
+            <p-multiSelect [options]="bodyParts" defaultLabel="All" (onChange)="dt.filter($event.value,col.field,col.filterMatchMode)" styleClass="ui-column-filter" appendTo="body"></p-multiSelect>
+        </ng-template>
+    </p-column>    
+    <p-column [style]="{'width':'32px'}">
+        <ng-template let-col let-case="rowData" pTemplate="body">
+            <app-favourite-toggle [caseId]="case.id"></app-favourite-toggle>
+        </ng-template>
+    </p-column>
+    <p-column [style]="{'width':'32px'}">
+        <ng-template let-col let-case="rowData" pTemplate="body">
+            <app-cpd-toggle [caseId]="case.id"></app-cpd-toggle>
+        </ng-template>
+    </p-column> 
+</p-dataTable>
+<p-messages [(value)]="msgs"></p-messages>
+

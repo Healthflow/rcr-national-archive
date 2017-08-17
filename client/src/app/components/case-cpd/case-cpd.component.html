@@ -1,0 +1,17 @@
+<div class="ui-g">
+    <div class="ui-g-4">
+        <div class="ui-g">
+            <div class="ui-g-6">Points</div>
+            <div class="ui-g-6"><p-spinner size="15" [(ngModel)]="points" [min]="0" [max]="100"></p-spinner></div>
+        </div>
+    </div>
+    <div class="ui-g-8">
+        <div class="ui-g">
+            <div class="ui-g-2">Reflections</div>
+            <div class="ui-g-6"><textarea pInputTextarea cols="50" [(ngModel)]="reflections"></textarea></div>
+        </div>
+    </div>
+    <div class="ui-g-12">
+        <button pButton type="button" (click)="save()" label="Save"></button>
+    </div>
+</div>

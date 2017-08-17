@@ -1,0 +1,11 @@
+<p-tabView>
+  <p-tabPanel header="Case Data" leftIcon="fa-info">
+    <app-case-data [caseData]="caseData"></app-case-data>
+  </p-tabPanel>
+  <p-tabPanel header="Case Images" leftIcon="fa-picture-o">
+    <app-case-images [caseId]="caseData.id"></app-case-images>   
+  </p-tabPanel>
+  <p-tabPanel header="CPD" leftIcon="fa-graduation-cap" *ngIf="isCpd">
+    <app-case-cpd [caseId]="caseData.id"></app-case-cpd>   
+  </p-tabPanel>
+</p-tabView>

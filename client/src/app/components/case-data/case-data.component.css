@@ -1,0 +1,8 @@
+p-chips >>> .ui-chips>ul.ui-inputtext {
+    border-style: hidden;
+    opacity: 1;
+}
+
+p-chips >>> li.ui-chips-token {
+    background-color: #2399e5;
+}
