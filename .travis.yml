@@ -10,6 +10,7 @@ before_install:
 install:
   - cd client
   - npm install
+  - npm install enhanced-resolve@3.3.0 #workaroun for angular cli issue: Can't resolve './$$_gendir/app/app.module.ngfactory'
   - ng build -prod
   - cd ../server
   - npm install
