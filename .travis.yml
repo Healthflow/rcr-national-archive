@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - 6
+cache:
+  directories:
+    - client/node_modules
+    - server/node_modules
+before_script:
+  - npm install -g @angular/cli
+install:
+  - cd client
+  - ng build -prod
+  - cp -rf ./dist ../server/client
+  - cd ../server
+  - npm install
+  - zip rcr-national-archive.zip
