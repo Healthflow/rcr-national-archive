@@ -14,6 +14,7 @@ install:
   - ng build -prod
   - cd dist
   - mv index.html 200.html
+script: true
 deploy:
   provider: surge
   project: ./client/dist/
