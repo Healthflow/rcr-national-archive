@@ -5,12 +5,13 @@ cache:
   directories:
     - client/node_modules
     - server/node_modules
-before_script:
+before_install:
   - npm install -g @angular/cli
 install:
   - cd client
   - ng build -prod
-  - cp -rf ./dist ../server/client
   - cd ../server
   - npm install
+script:
+  - cp -rf ../client/dist ./client
   - zip rcr-national-archive.zip
