@@ -9,6 +9,7 @@ before_install:
   - npm install -g @angular/cli
 install:
   - cd client
+  - npm install
   - ng build -prod
   - cd ../server
   - npm install
