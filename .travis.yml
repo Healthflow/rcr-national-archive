@@ -6,7 +6,7 @@ cache:
     - client/node_modules
     - server/node_modules
 before_install:
-  - npm install -g @angular/cli
+  - npm install -g @angular/cli@1.1.1
 install:
   - cd client
   - npm install
