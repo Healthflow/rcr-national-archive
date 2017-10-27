@@ -6,7 +6,7 @@ An ambitious project carried out in collaboration with [The Royal College of Rad
 * Artificial Intelligence data lakes taxonomised by consultant radiologists at the point of submission
 * A tool for organising, hosting and administering image data for clinical research trials
 
-[Slides from the presentation given by Dr Daniel Fascia at The Royal College of Radiologists, London](https://docs.google.com/presentation/d/1ljTjWiI0iTjjiK09h7RSH8Oauo4LJ36hb7Tpu9APKlY/edit?usp=sharing)
+[Slides from the presentation given by Dr Daniel Fascia at The Royal College of Radiologists, London](https://speakerdeck.com/danfascia/the-royal-college-of-radiologists-national-imaging-archive-concept)
 
 [![Build Status](https://travis-ci.org/Healthflow/rcr-national-archive.svg?branch=master)](https://travis-ci.org/Healthflow/rcr-national-archive)
 
